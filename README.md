@@ -96,6 +96,26 @@ python3 scripts/check_project.py      # структура, ссылки, схе
 python3 scripts/build_notebooks.py    # собрать .ipynb из notebooks/*.py
 ```
 
+## Публикация
+
+Сайт: **https://ai-docs.adelfos.ru** — контейнер CT 109 на Proxmox `pxhome`, nginx, статика.
+
+```bash
+./deploy-pxhome.sh              # проверки + сборка + выкладка (через ssh-алиас pxhome)
+./deploy-pxhome.sh --build-only # только собрать
+```
+
+CI: push в `main` запускает проверки на облачном раннере GitHub и выкладку своим
+раннером в CT 121 (`.github/workflows/deploy.yml`). Раннер регистрируется один раз:
+
+```bash
+./scripts/setup-ci-runner.sh
+```
+
+Сертификат и проксирование — общий Nginx Proxy Manager в CT 101: proxy host
+`ai-docs.adelfos.ru` → `192.168.0.109:80`, сертификат Let's Encrypt. Поддомены
+`*.adelfos.ru` уже указывают на нужный IP, отдельная DNS-запись не нужна.
+
 ## Что лежит в репозитории
 
 ```
