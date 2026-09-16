@@ -1,0 +1,42 @@
+{
+  "marked.min.js": {
+    "url": "https://cdn.jsdelivr.net/npm/marked@18.0.11/lib/marked.umd.js",
+    "sha256": "69451c8541c9c1e7a4bf3ffc6f73c4d89633de92bfbe3e484dfe182ef8091f88"
+  },
+  "mermaid.min.js": {
+    "url": "https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js",
+    "sha256": "581ed7d74bd9048d0e3a91363927d72ef22942d7722546b27f7cc29e35390eb8"
+  },
+  "purify.min.js": {
+    "url": "https://cdn.jsdelivr.net/npm/dompurify@3.4.15/dist/purify.min.js",
+    "sha256": "f263b05369e050fa175d4ecb9c9358eb4253602d510297adfb31df48b2f1c4d5"
+  },
+  "highlight.min.js": {
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js",
+    "sha256": "837a6fa5b0c736b52bbde2b2b6190f305da3fc9ed41681db5321507057b5c846"
+  },
+  "github-dark.min.css": {
+    "url": "https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css",
+    "sha256": "9f208d022102b1d0c7aebfecd8e42ca7997d5de636649d2b31ea63093d809019"
+  },
+  "github-markdown-light.min.css": {
+    "url": "https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.0/github-markdown-light.min.css",
+    "sha256": "ea9665c2c4c46a99a2e38d4572067481fa8a193de90559ccf120278534716a9b"
+  },
+  "mermaid-LICENSE": {
+    "url": "https://cdn.jsdelivr.net/npm/mermaid@11.17.2/LICENSE",
+    "sha256": "ec9fb67dcb25eccc416ed56e1aab819222c805a2a4bfe4cb19e7556bf2ffde80"
+  },
+  "dompurify-LICENSE": {
+    "url": "https://cdn.jsdelivr.net/npm/dompurify@3.4.15/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "highlight-LICENSE": {
+    "url": "https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/LICENSE",
+    "sha256": "6c081431591d9df696c82dc598fe1423765b8a299b200ed00b281afd0f64c490"
+  },
+  "markdown-css-LICENSE": {
+    "url": "https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.0/license",
+    "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+  }
+}
