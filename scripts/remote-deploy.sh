@@ -102,9 +102,21 @@ proverit() {
   return 1
 }
 
-for path in index.html reader.html reader-links.js files.json \
-            vendor/marked.min.js 01-llm-osnovy/book.md \
-            labs/tema1-llm-osnovy/01_tokeny.py \
-            labs/tema1-llm-osnovy/01_tokeny.ipynb; do
+# Обязательные файлы сайта плюс первый урок и первый ноутбук — их имена берём
+# из files.json и с диска, чтобы проверка не зависела от названий модулей.
+smoke=(index.html reader.html reader-links.js files.json vendor/marked.min.js)
+pervyy_urok=$(python3 - "$release/files.json" <<'PY' 2>/dev/null || true
+import json, sys
+kursy = json.load(open(sys.argv[1]))["courses"]
+kurs = sorted(kursy)[0]
+fayly = [f["file"] if isinstance(f, dict) else f for f in kursy[kurs]]
+print(f"{kurs}/{fayly[0]}")
+PY
+)
+[[ -n "$pervyy_urok" ]] && smoke+=("$pervyy_urok")
+pervyy_noutbuk=$(cd "$release" && ls labs/*/*.ipynb 2>/dev/null | head -1)
+[[ -n "$pervyy_noutbuk" ]] && smoke+=("$pervyy_noutbuk")
+
+for path in "${smoke[@]}"; do
   proverit "$path"
 done

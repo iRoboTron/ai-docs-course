@@ -13,7 +13,7 @@
 set -euo pipefail
 
 CTID="${CTID:-109}"
-SITE_DIR="${SITE_DIR:-ai9.adelfos.ru}"
+SITE_DIR="${SITE_DIR:-ai-docs.adelfos.ru}"
 SSH_HOST="${SSH_HOST:-pxhome}"          # для VIA=host
 CT_SSH="${CT_SSH:-root@192.168.0.109}"  # для VIA=direct
 VIA="${VIA:-host}"

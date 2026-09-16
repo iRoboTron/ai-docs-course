@@ -1,0 +1,42 @@
+name: Проверки и публикация
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-ai-docs
+  cancel-in-progress: false
+
+jobs:
+  check:
+    # Проверки идут на облачном раннере: они ничего не знают о домашней сети.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/check_project.py
+      - run: python3 scripts/build_notebooks.py --check
+      - run: bash -n deploy-pxhome.sh scripts/remote-deploy.sh
+
+  deploy:
+    # Публикация — только на своём раннере (CT 121): Proxmox из интернета не виден.
+    needs: check
+    runs-on: [self-hosted, ai-docs]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Выложить на CT 109
+        env:
+          VIA: direct
+          CT_SSH: root@192.168.0.109
+          SITE_DIR: ai-docs.adelfos.ru
+          CHECK: '0'   # проверки уже прошли в job check
+        run: ./deploy-pxhome.sh
