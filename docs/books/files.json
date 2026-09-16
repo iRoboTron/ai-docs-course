@@ -35,6 +35,42 @@
         "file": "glossary.md",
         "title": "Словарик модуля"
       }
+    ],
+    "03-vsya-spravka": [
+      {
+        "file": "book.md",
+        "title": "Модуль 3: v3 — весь сайт в запросе"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. Грунтование: дать модели факты"
+      },
+      {
+        "file": "chapter-02.md",
+        "title": "Урок 2. Цена решения и память диалога"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
+    ],
+    "04-prostoy-rag": [
+      {
+        "file": "book.md",
+        "title": "Модуль 4: v4 — простой RAG"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. Из сайта в куски"
+      },
+      {
+        "file": "chapter-02.md",
+        "title": "Урок 2. Поиск и первый RAG"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
     ]
   }
 }
