@@ -63,12 +63,27 @@ def iz_sekretov(imya, po_umolchaniyu=None):
 
 
 BASE_URL = iz_sekretov("AI_BASE_URL", "https://ai9.adelfos.ru/api/v1")
-API_KEY = iz_sekretov("AI_KEY") or getpass.getpass("Ключ или код доступа: ")
 MODEL = iz_sekretov("AI_MODEL", "qwen/qwen3.7-flash")
+API_KEY = iz_sekretov("AI_KEY")
 
+# Сервер проверяет ключ, только когда мы к нему обращаемся. Поэтому делаем один лёгкий
+# запрос — список моделей — и, если ключ не подошёл, спрашиваем его заново. Цикл
+# крутится до тех пор, пока подключение не заработает: так ноутбук не падает
+# посреди урока из-за опечатки в ключе.
 # timeout: не ждать ответа вечно. max_retries=0: повторять будем сами и осознанно (модуль 2).
-client = OpenAI(base_url=BASE_URL, api_key=API_KEY, timeout=60, max_retries=0)
-print(f"Адрес: {BASE_URL}\nМодель: {MODEL}")
+client = None
+while client is None:
+    if not API_KEY:
+        API_KEY = getpass.getpass("Ключ или код доступа: ")
+    probnyy = OpenAI(base_url=BASE_URL, api_key=API_KEY, timeout=60, max_retries=0)
+    try:
+        probnyy.models.list()
+        client = probnyy
+        print(f"Подключились. Адрес: {BASE_URL}, модель: {MODEL}")
+    except Exception as oshibka:
+        print(f"Не подошло: {type(oshibka).__name__} — {str(oshibka)[:120]}")
+        print("Проверьте ключ (и адрес, если он свой) и введите ключ заново.")
+        API_KEY = None
 
 # %% [markdown]
 # ### Трасса: видеть, что уходит и что приходит
