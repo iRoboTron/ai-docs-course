@@ -71,6 +71,24 @@
         "file": "glossary.md",
         "title": "Словарик модуля"
       }
+    ],
+    "05-kakoy-rag": [
+      {
+        "file": "book.md",
+        "title": "Модуль 5: v5 — какой RAG выбрать"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. Чем мерить поиск"
+      },
+      {
+        "file": "chapter-02.md",
+        "title": "Урок 2. Три фактора и выбор"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
     ]
   }
 }
