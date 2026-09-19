@@ -107,6 +107,20 @@
         "file": "glossary.md",
         "title": "Словарик модуля"
       }
+    ],
+    "07-servis": [
+      {
+        "file": "book.md",
+        "title": "Модуль 7: каркас сервиса"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. FastAPI поверх RAG из модуля 6"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
     ]
   }
 }

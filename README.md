@@ -42,6 +42,8 @@
 
 ### Часть 2. Бот для сайта — свой репозиторий
 
+Код сервиса — в отдельном репозитории [ai-docs-course-bot](https://github.com/iRoboTron/ai-docs-course-bot).
+
 | № | О чём |
 |---|---|
 | 7 | Каркас сервиса: FastAPI, выбранный RAG, хранилище (файл / SQLite / pgvector), тесты в CI |
