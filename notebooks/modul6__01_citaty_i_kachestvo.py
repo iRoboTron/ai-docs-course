@@ -494,7 +494,11 @@ print("""
 # в час шаг заметен.
 
 # %%
-!pip -q install ragas
+# ragas тянет langchain_community.chat_models.vertexai — модуль, который сам
+# langchain-community уже выпиливает при сворачивании пакета (deprecation).
+# Без версии постарше pip ставит несовместимую пару и импорт падает
+# ModuleNotFoundError ещё до того, как мы вызвали хоть одну функцию ragas.
+!pip -q install ragas "langchain-community<0.4"
 
 # %%
 from ragas import EvaluationDataset, SingleTurnSample, evaluate
