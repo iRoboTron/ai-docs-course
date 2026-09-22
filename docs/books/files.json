@@ -125,6 +125,24 @@
         "file": "glossary.md",
         "title": "Словарик модуля"
       }
+    ],
+    "08-dialog": [
+      {
+        "file": "book.md",
+        "title": "Модуль 8: диалог на сайте"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. Поток и виджет"
+      },
+      {
+        "file": "chapter-02.md",
+        "title": "Урок 2. Память диалога через LangChain"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
     ]
   }
 }
