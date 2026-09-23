@@ -28,8 +28,8 @@
 - [Урок 1. Журнал и стоимость](chapter-01.md) — учёт цены через
   `litellm.completion_cost`, запись каждого вызова · код: `app/observability.py`
   в [ai-docs-course-bot](https://github.com/iRoboTron/ai-docs-course-bot)
-- Урок 2. Лимиты и резервная модель — `litellm.Router` с fallback,
-  ограничение частоты запросов по сессии (в работе)
+- [Урок 2. Лимиты и резервная модель](chapter-02.md) — `litellm.Router` с
+  fallback, ограничение частоты запросов по сессии
 - [Словарик модуля](glossary.md)
 
 ## Что понадобится
