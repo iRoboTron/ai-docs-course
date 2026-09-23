@@ -143,6 +143,20 @@
         "file": "glossary.md",
         "title": "Словарик модуля"
       }
+    ],
+    "09-v-rabote": [
+      {
+        "file": "book.md",
+        "title": "Модуль 9: в работе"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. Журнал и стоимость"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
     ]
   }
 }
