@@ -161,6 +161,20 @@
         "file": "glossary.md",
         "title": "Словарик модуля"
       }
+    ],
+    "10-bezopasnost": [
+      {
+        "file": "book.md",
+        "title": "Модуль 10: безопасность и выпуск"
+      },
+      {
+        "file": "chapter-01.md",
+        "title": "Урок 1. Защита от подмены инструкций"
+      },
+      {
+        "file": "glossary.md",
+        "title": "Словарик модуля"
+      }
     ]
   }
 }
